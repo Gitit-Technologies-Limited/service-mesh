@@ -32,6 +32,7 @@ services:
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9093
     depends_on:
       - kafka
+      - discovery-service
 
   discovery-service:
     build:
@@ -39,18 +40,40 @@ services:
       dockerfile: discovery-service/Dockerfile 
     depends_on:
       - kafka
-      - event-bus
-
+      
   config-service:
     build:
       context: .
       dockerfile: config-service/Dockerfile 
     depends_on:
       - kafka
-      - event-bus
+      - discovery-service
+      
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.1
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.15.1
+    volumes:
+      - ./logstash/config/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+    depends_on:
+      - elasticsearch
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.15.1
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
       
 networks:
-  eademo_net:
+  gitit_net:
     driver: bridge
 
 volumes:

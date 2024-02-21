@@ -19,7 +19,10 @@
         <module>config</module>
         <module>discovery</module>
         <module>api-gateway</module>
-        <module>event-bus</module>        
+        <module>event-bus</module>
+        <module>auth</module>
+	<module>tracing</module>
+	<module>common</module>
     </modules>
 
     <properties>
@@ -35,12 +38,30 @@
     </properties>
     
     <dependencies>
-       
-    
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>6.6</version>
+        </dependency>    
     </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-parent</artifactId>
+                <version>2023.0.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>   
     <build>        
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
