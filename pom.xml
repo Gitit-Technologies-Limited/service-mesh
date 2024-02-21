@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.14</version>
+        <relativePath/> 
+    </parent>
+
+    <groupId>com.gitit-tech</groupId>
+    <artifactId>service-mesh</artifactId>
+    <packaging>pom</packaging>
+    <version>2.0</version>
+    <modules>
+        <module>config</module>
+        <module>discovery</module>
+        <module>api-gateway</module>
+        <module>event-bus</module>        
+    </modules>
+
+    <properties>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
+        <java.version>18</java.version>
+        <querydsl.version>5.0.0</querydsl.version>
+        <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
+        <lombok.version>1.18.20</lombok.version>
+        <maven.compiler.version>3.8.0</maven.compiler.version>        
+        <jar.plugin.version>3.1.0</jar.plugin.version>
+        <spingboot.version>2.7.14</spingboot.version>
+    </properties>
+    
+    <dependencies>
+       
+    
+    </dependencies>
+    <build>        
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>1.4.1</version>
+                    <configuration>
+                        <rules>
+                            <dependencyConvergence/>
+                        </rules>
+                    </configuration>
+                </plugin>                
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
