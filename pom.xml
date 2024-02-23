@@ -7,24 +7,9 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.14</version>
-        <relativePath/> 
+        <version>3.2.1</version>
     </parent>
 
-    <groupId>com.gitit-tech</groupId>
-    <artifactId>service-mesh</artifactId>
-    <packaging>pom</packaging>
-    <version>2.0</version>
-    <modules>
-        <module>config</module>
-        <module>discovery</module>
-        <module>api-gateway</module>
-        <module>event-bus</module>
-        <module>auth</module>
-	<module>tracing</module>
-	<module>common</module>
-        <module>com.gitittech_auth-service_jar_1.0-SNAPSHOT</module>
-    </modules>
 
     <properties>
         <maven.compiler.source>18</maven.compiler.source>
@@ -35,8 +20,24 @@
         <lombok.version>1.18.20</lombok.version>
         <maven.compiler.version>3.8.0</maven.compiler.version>        
         <jar.plugin.version>3.1.0</jar.plugin.version>
-        <spingboot.version>2.7.14</spingboot.version>
+        <spingboot.version>3.2.1</spingboot.version>
+        <springcloud.version>4.1.0</springcloud.version>
     </properties>
+
+   
+    <groupId>com.gitit-tech</groupId>
+    <artifactId>service-mesh</artifactId>
+    <packaging>pom</packaging>
+    <version>2.0</version>
+    <modules>
+        <module>config</module>
+        <module>discovery</module>
+        <module>api-gateway</module>
+        <module>event-bus</module>
+        <module>auth</module>
+        <module>tracing</module>
+        <module>common</module>
+    </modules>
     
     <dependencies>
         <dependency>
