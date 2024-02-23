@@ -23,6 +23,7 @@
         <module>auth</module>
 	<module>tracing</module>
 	<module>common</module>
+        <module>com.gitittech_auth-service_jar_1.0-SNAPSHOT</module>
     </modules>
 
     <properties>
