@@ -14,7 +14,7 @@ spring:
       password: n0n5t0p
       discovery:
         enabled: true
-        serviceId: config-server
+        serviceId: config-service
   
 eureka:
   client:
