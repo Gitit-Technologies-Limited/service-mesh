@@ -2,7 +2,7 @@ spring:
   application:
     name: event-bus
   profiles:
-    activee: staging 
+    active: staging 
   cloud:
     config:
       failFast: true
