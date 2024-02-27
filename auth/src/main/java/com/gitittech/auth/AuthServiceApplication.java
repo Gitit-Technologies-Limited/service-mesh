@@ -1,15 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
-package com.gitittech.auth.service;
+package com.gitittech.auth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  *
- * @author HP
+ * @author Ambrose Ariagiegbe
  */
 @SpringBootApplication
 public class AuthServiceApplication {

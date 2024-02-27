@@ -2,16 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.gitittech.event.bus.services;
+package com.gitittech.auth.services;
 
-import com.gitittech.common.models.Event;
-import org.springframework.stereotype.Service;
+import com.gitittech.auth.dtos.DtoAuthUser;
+import com.gitittech.auth.dtos.DtoUserWithToken;
 
 /**
  *
  * @author Ambrose Ariagiegbe
  */
-@Service
-public interface IProducerService {
-    void sendEvent(Event msg);
+public interface IAuthService {    
+    DtoUserWithToken signIn(DtoAuthUser user) throws Throwable;
 }
