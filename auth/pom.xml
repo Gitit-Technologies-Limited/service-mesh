@@ -46,7 +46,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bootstrap</artifactId>
             <version>4.1.0</version>
-        </dependency>
+        </dependency>                
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>

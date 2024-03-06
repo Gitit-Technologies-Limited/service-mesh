@@ -1,0 +1,31 @@
+
+global:
+  scrape_interval: 15s # By default, scrape targets every 15 seconds.
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'prometheus'
+    scrape_interval: 15s
+    static_configs:
+      - targets: [ 'localhost:9090' ]
+  - job_name: 'auth-service'
+    scrape_interval: 15s
+    metrics_path: /metrics
+    static_configs:
+      - targets: [ 'auth-service:8080' ]
+  - job_name: 'config-service'
+    scrape_interval: 15s
+    metrics_path: /metrics
+    static_configs:
+      - targets: [ 'config-service:8080' ]
+  - job_name: 'discovery-service'
+    scrape_interval: 15s
+    metrics_path: /metrics
+    static_configs:
+      - targets: [ 'discovery-service:8080' ]
+  - job_name: 'event-bus'
+    scrape_interval: 15s
+    metrics_path: /metrics
+    static_configs:
+      - targets: [ 'event-bus:8080' ]
